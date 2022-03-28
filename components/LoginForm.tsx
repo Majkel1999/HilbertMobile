@@ -11,11 +11,17 @@ export default function LoginForm(props: LoginFormProps) {
     const [username, setUsername] = React.useState('');
     const [password, setPassword] = React.useState('');
 
+    async function login() {
+        LoginUser(username, password).then((response) => {
+            alert(response.access_token);
+        })
+    }
+
     return (
         <SafeAreaView>
             <TextInput placeholder="Login" style={styles.input} onChangeText={setUsername} value={username} />
             <TextInput placeholder="Password" style={styles.input} onChangeText={setPassword} value={password} />
-            <Button title="Login" onPress={() => { LoginUser(username, password) }} />
+            <Button title="Login" onPress={login} />
             <Text style={styles.linkText} onPress={() => { props.callback(); }}>No account? Register here!</Text>
         </SafeAreaView>
     )
