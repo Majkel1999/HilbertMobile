@@ -9,12 +9,15 @@ export const styles = StyleSheet.create({
         padding: 10,
     },
     listItem: {
-        margin: 20
+        margin: 10,
+        color: '#00ff00',
+        alignSelf: 'center'
     },
     linkText: {
         color: '#06066b',
         alignSelf: 'center',
         marginTop: 20,
+        fontWeight: "bold"
     },
     header: {
         fontSize: 32,
@@ -43,5 +46,4 @@ export const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'space-around'
     }
-
 });
